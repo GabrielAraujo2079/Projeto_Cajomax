@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #0C2B4E;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+  justify-content: space-between;
+   box-sizing: border-box; /*Prevenir que o padding não engorde a side bar */
+}
+.header img { /*segura o tamanho das imagens */
+  height: 50px;
+  width: auto;
+}
+.header a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.sidebar {
+  position: fixed;
+  box-sizing: border-box; /*Prevenir que o padding não engorde a side bar */
+  top: 60px;          /* começa abaixo do header */
+  left: 0;
+  width: 140px;
+  height: calc(100vh - 60px); /* ocupa o resto da tela (tive que pesquisar nunca fiz side bar) */
+  background: #0C2B4E;
+  padding: 20px;
+}
+/*Gerenciar os hyper links da side bar */
+.sidebar a {
+  display: block;
+  color: #FFFFFF;
+  text-decoration: none; /*remove a linha feia dos links */ 
+  margin-bottom: 10px;
+}
+ 
