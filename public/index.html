@@ -1,38 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <!--Página principal/raiz-->
+<!-- Página principal/raiz -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CajomaX</title>
+
     <!--Link Css global (o css usado em todas as paginas)-->
     <link rel="stylesheet" href="css/global.css">
 </head>
+
 <body>
+
     <header class="header">
         <a href="index.html">
-        <img src="assets/icons/mascote_cajomaxIcon.ico" alt="icone CajomaX">
+            <img class="icon" src="assets/icons/mascote_cajomaxIcon.ico" alt="Logo CajomaX">
         </a>
+
         <a href="login.html">
-             <img src="assets/icons/user_icon.png" alt="Logar">
+            <img class="img" src="assets/icons/user_icon.png" alt="Logar">
         </a>
     </header>
-     <aside class="sidebar">
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Config</a>
-      <a href="#">Suporte</a>
-      <a href="#">Sobre</a>
-    </nav>
-  </aside>
 
-  <main class="content">
-  </main>
+    <aside class="sidebar">
+        <nav>
 
+            <a href="#">
+                <img src="assets/icons/home.webp" alt="Config">
+                <span>Home</span>
+            </a>
 
+            <a href="#">
+                <img src="assets/icons/setting.webp" alt="Config">
+                <span>Config</span>
+            </a>
 
+            <a href="#">
+                <img src="assets/icons/support.webp" alt="Config">
+                <span>Suporte</span>
+            </a>
+
+            <a href="#">
+                <img src="assets/icons/question.webp" alt="Config">
+                <span>Sobre</span>
+            </a>
+        </nav>
+
+    </aside>
+
+    <main class="content">
+        <div class="cards-container">
+            <div class="card-titulo">
+                <a class="card card-1" href="/adolescentes"></a>
+                <span>Adolescentes</span>
+            </div>
+            <div class="card-titulo">
+                <a class="card card-2" href="/adultos"></a>
+                <span>Adultos</span>
+            </div>
+            <div class="card-titulo">
+                <a class="card card-3" href="/grandes-idades"></a>
+                <span>Grandes idades</span>
+            </div>
+        </div>
+    </main>
 
     <!--Link js-->
     <script src="js/script.js"></script>
+
 </body>
+
 </html>
