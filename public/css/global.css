@@ -112,6 +112,13 @@ body {
   width: 100%;
   border-radius: 16px;
 }
+.content span{
+  background: linear-gradient(to right, #0C2B4E, #1A3D64, #000000); /*Esquema de cores do texto */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 45px;
+}
 /*gradient dos cards */
 .card-1 { background: linear-gradient(135deg, #1A3D64, #1D546C); color: #EEEDFE; }
 .card-2 { background: linear-gradient(135deg, #1A3D64, #1D546C); color: #E1F5EE; }
