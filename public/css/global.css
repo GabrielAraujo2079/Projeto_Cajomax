@@ -1,0 +1,118 @@
+/* RESET básico (evita bugs de layout) */
+* {
+  box-sizing: border-box; /* Prevenir que padding aumente tamanho */
+}
+h1{
+  text-align: center;
+}
+body {
+  margin: 0;
+}
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #0C2B4E;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* separa lados */
+  padding: 0 20px;
+  z-index: 1000;
+}
+/*Configura o tamanho das imagens */
+.img { /* segura o tamanho das imagens */
+  height: 40px;
+  width: auto;
+}
+/*Configura o tamanho dos icons */
+.icon {
+  height: 45px;
+  width: auto;
+}
+.header a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 60px; /* começa abaixo do header */
+  left: 0;
+  width: 190px;
+  height: calc(100vh - 60px); /* ocupa o resto da tela */
+  background: #0C2B4E;
+  padding: 10px;
+}
+/* Garante que o nav ocupe toda a largura da sidebar */
+.sidebar nav {
+  width: 100%;
+}
+/*Gerenciar os hyper links da side bar */
+.sidebar a {
+  display: flex;
+  align-items: center; /* centraliza vertical */
+  justify-content: flex-start; /* alinha itens à esquerda */
+  width: 100%; /* garante que o link ocupe toda a largura */
+  color: #FFFFFF;
+  text-decoration: none; /* remove linha feia */
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+/* Hover (deixa bonito) */
+.sidebar a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.sidebar img {
+  width: auto;
+  height: 25px;
+  flex-shrink: 0; /* impede que a imagem encolha */
+  margin-left: 8px; /* espaço entre texto e ícone */
+}
+.sidebar span {
+  flex: 1;
+}
+/* CONTEÚDO- Main */
+
+.content {
+  margin-top: 60px;   /* espaço do header */
+  margin-left: 190px; /* espaço da sidebar */
+  padding: 20px;
+}
+
+/*Controle dos cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+}
+.card {
+  height: 500px;
+  width: auto; /* ocupa a coluna do grid */
+}
+.card-titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-wrapper span {
+  color: #ffffff;
+  font-size: 16px;
+}
+.card {
+  height: 500px;
+  width: 100%;
+  border-radius: 16px;
+}
+/*gradient dos cards */
+.card-1 { background: linear-gradient(135deg, #1A3D64, #1D546C); color: #EEEDFE; }
+.card-2 { background: linear-gradient(135deg, #1A3D64, #1D546C); color: #E1F5EE; }
+.card-3 { background: linear-gradient(135deg, #1A3D64, #1D546C); color: #FAECE7; }
