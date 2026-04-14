@@ -114,10 +114,11 @@ body {
 }
 .content span{
   background: linear-gradient(to right, #0C2B4E, #1A3D64, #000000); /*Esquema de cores do texto */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  -webkit-background-clip: text;  /*Mesma */
+  -webkit-text-fill-color: transparent; /*Deixa a imagem */
+  background-clip: text; /*faz o background do elemento ser recortado no formato das letras, em vez de preencher o bloco todo. */
   font-size: 45px;
+  border-bottom: 2px solid black; /*Borda abaixo do texto dos cards */
 }
 /*gradient dos cards */
 .card-1 { background: linear-gradient(135deg, #1A3D64, #1D546C); color: #EEEDFE; }
