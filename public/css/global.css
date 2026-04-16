@@ -1,0 +1,263 @@
+/* RESET básico (evita bugs de layout) */
+* {
+  box-sizing: border-box; /* Prevenir que padding aumente tamanho */
+}
+
+body {
+  margin: 0;
+  background: #F1EFEC;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #0C2B4E;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* separa lados */
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+/* Configura o tamanho das imagens */
+.img {
+  height: 40px;
+  width: auto;
+}
+
+/* Configura o tamanho dos icons */
+.icon {
+  height: 45px;
+  width: auto;
+}
+.header a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 60px; /* começa abaixo do header */
+  left: 0;
+  width: 190px;
+  height: calc(100vh - 60px); /* ocupa o resto da tela */
+  background: #0C2B4E;
+  padding: 10px;
+}
+/* Garante que o nav ocupe toda a largura da sidebar */
+.sidebar nav {
+  width: 100%;
+}
+
+/* Gerenciar os hyper links da sidebar */
+.sidebar a {
+  display: flex;
+  align-items: center;         /* centraliza vertical */
+  justify-content: flex-start; /* alinha itens à esquerda */
+  width: 100%;                 /* garante que o link ocupe toda a largura */
+  color: #FFFFFF;
+  text-decoration: none;       /* remove linha feia */
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+/* Hover (deixa bonito) */
+.sidebar a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar img {
+  width: auto;
+  height: 25px;
+  flex-shrink: 0;   /* impede que a imagem encolha */
+  margin-left: 8px; /* espaço entre texto e ícone */
+}
+
+.sidebar span {
+  flex: 1;
+}
+
+/* CONTEÚDO - Main */
+.content {
+  margin-top: 60px;    /* espaço do header */
+  margin-left: 190px;  /* espaço da sidebar */
+  padding: 20px;
+}
+
+/* Controle dos cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+}
+
+.card {
+  height: 500px;
+  width: 100%;
+  border-radius: 16px;
+  transition: 0.3s ease;
+  display: block;   /* necessário para a imagem preencher corretamente */
+  overflow: hidden; /* corta a imagem nas bordas arredondadas */
+}
+
+.card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 10px 20px rgb(173, 172, 172);
+}
+
+/*-------------> Aqui é H1 <--------------*/
+/* Container com margem superior */
+.cajomax-container {
+  margin-top: 3rem;
+}
+
+/* Área de destaque centralizada */
+.cajomax-hero {
+  text-align: center;
+  padding: 0rem 0;
+}
+
+/* Título principal com o efeito de sombra */
+.cajomax-title {
+  color: #D4C9BE;
+  text-shadow: 4px 4px 0px #123458;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: calc(1.5rem + 7vw);
+  margin-bottom: 0.5rem;
+}
+
+/* Texto do subtítulo */
+.cajomax-subtitle {
+  color: #030303;
+  text-transform: uppercase;
+  font-family: 'Arvo', serif;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+}
+/*-------------> Aqui é final H1 <--------------*/
+
+.card-titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-wrapper span {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+/* Faz a imagem preencher o card sem distorcer */
+.card img {
+  width: 80%;
+  height: 85%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  margin: auto;
+  border-radius: 12px; /* bordas arredondadas */
+  margin-top: 5%;      /* espaço no topo */
+}
+
+/* Texto abaixo dos cards */
+.content span {
+  background: linear-gradient(to right, #0C2B4E, #1A3D64, #000000); /* Esquema de cores do texto */
+  -webkit-background-clip: text;        /* Mesma coisa que background-clip, suporte WebKit */
+  -webkit-text-fill-color: transparent; /* Deixa o preenchimento transparente pra aparecer o gradiente */
+  background-clip: text;                /* Recorta o background no formato das letras */
+  font-size: 45px;
+  border-bottom: 2px solid black;       /* Borda abaixo do texto dos cards */
+}
+
+/* Gradiente dos cards */
+.card-1 { background: linear-gradient(135deg, #1A3D64, #1D546C); color: #EEEDFE; }
+.card-2 { background: linear-gradient(135deg, #1A3D64, #1D546C); color: #E1F5EE; }
+.card-3 { background: linear-gradient(135deg, #1A3D64, #1D546C); color: #FAECE7; }
+
+/* Estilo para o formulário de contato */
+form {
+  margin-top: 20px;
+  background: #FFFFFF;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+form button {
+  background: #0C2B4E;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+form button:hover {
+  background: #094074;
+}
+
+/* Estilo para a seção de FAQ */
+.faq {
+  margin-top: 40px;
+}
+
+.faq h2 {
+  margin-bottom: 20px;
+  color: #0C2B4E;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+}
+
+.faq-item h3 {
+  cursor: pointer;
+  color: #0C2B4E;
+  font-size: 18px;
+  margin: 0;
+}
+
+.faq-item h3:hover {
+  text-decoration: underline;
+}
+
+.faq-item p {
+  display: none; /* Escondido por padrão */
+  margin: 10px 0 0;
+  padding: 10px;
+  background: #F1F1F1;
+  border-left: 4px solid #0C2B4E;
+  border-radius: 4px;
+  color: #333;
+}
