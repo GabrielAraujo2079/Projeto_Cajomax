@@ -5,8 +5,63 @@
 
 body {
   margin: 0;
+  min-height: 100vh;
   background: #F1EFEC;
+
 }
+
+main{
+  position: relative;
+  height: 100%;
+}
+
+/* Bolhas dá página de fundo*/
+.bolhas {
+  position: fixed;               /* cobre a tela toda, por cima do background. FUNDAMENTALLL*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around; /* distribui as bolhas pela largura toda, sem a necessidade do Wdg */
+  align-items: flex-start;       /* ancora no topo pra cair pra baixo */
+  z-index: 0;                    /* fica atrás do conteúdo */
+  pointer-events: none;          /* não atrapalha cliques, bom né */
+  overflow: hidden;
+}
+
+/*Parte matemática da parada e animada*/
+.bolhas span{
+  width:30px;
+  height: 30px;
+  background: #1D546C;
+  flex-shrink: 0;
+  margin: 0 4px;
+  border-radius:50%;
+  box-shadow: 0 0 0 10px #1D546C44,
+  0 0 50px #1D546C,
+  0 0 100px #1D546C;
+  animation: animar calc(30s / var(--i)) linear infinite
+}
+/*Aqui na Key Frames estamos mexendo com os eixos X e Y que a gente vê no plano carteziano na escola*/
+@keyframes animar{
+ 0%{
+  transform: translatey(100vh) scale(0);
+ }
+
+ 100%{
+  transform: translatey(-10vh) scale(1);
+ }
+
+}
+/*Isso é uma condição para os par, para a variação de bolinhas*/
+.bolhas span:nth-of-type(even){
+  background: #ff7f50;
+  box-shadow: 0 0 0 10px #ff7f5044,
+  0 0 50px #ff7f50,
+  0 0 100px #ff7f50
+}
+
 
 h1 {
   text-align: center;
@@ -186,3 +241,33 @@ h1 {
 .card-1 { background: linear-gradient(135deg, #1A3D64, #1D546C); color: #EEEDFE; }
 .card-2 { background: linear-gradient(135deg, #1A3D64, #1D546C); color: #E1F5EE; }
 .card-3 { background: linear-gradient(135deg, #1A3D64, #1D546C); color: #FAECE7; }
+
+/*Só para indicar que o botão é clicável, É FRESCURA PARA NOSTRAR PARA A PESSOA QUE O CONTEINERRRRR E CLICÁVEL*/
+.card {
+  cursor: pointer;
+}
+
+/*Footer provisório*/
+.footer {
+  margin-left: 190px;
+  background: #0C2B4E;
+  color: rgba(255, 255, 255, 0.55);
+  padding: 16px;
+  text-align: center;
+  font-family: 'Arvo', serif;
+  font-size: .8rem;
+  letter-spacing: .1em;
+  position: relative;
+  z-index: 1;
+}
+  
+/*Deve ficar aqui no final do código a parte de reponsividade ok???*/
+
+
+
+
+
+
+
+
+
