@@ -1,18 +1,66 @@
-/* RESET básico (evita bugs de layout) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Arvo:wght@400;700&display=swap');
+
+/* RESET básico */
 * {
-  box-sizing: border-box; /* Prevenir que padding aumente tamanho */
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  min-height: 100vh;
   background: #F1EFEC;
+}
+
+main {
+  position: relative;
+  height: 100%;
+}
+
+/* ---- BOLHAS DE FUNDO ---- */
+.bolhas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bolhas span {
+  width: 30px;
+  height: 30px;
+  background: #1D546C;
+  flex-shrink: 0;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #1D546C44,
+              0 0 50px #1D546C,
+              0 0 100px #1D546C;
+  animation: animar calc(30s / var(--i)) linear infinite;
+}
+
+@keyframes animar {
+  0%   { transform: translateY(100vh) scale(0); }
+  100% { transform: translateY(-10vh) scale(1); }
+}
+
+.bolhas span:nth-of-type(even) {
+  background: #ff7f50;
+  box-shadow: 0 0 0 10px #ff7f5044,
+              0 0 50px #ff7f50,
+              0 0 100px #ff7f50;
 }
 
 h1 {
   text-align: center;
 }
 
-/* HEADER */
+/* ---- HEADER ---- */
 .header {
   position: fixed;
   top: 0;
@@ -23,56 +71,55 @@ h1 {
   color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* separa lados */
+  justify-content: space-between;
   padding: 0 20px;
   z-index: 1000;
 }
 
-/* Configura o tamanho das imagens */
 .img {
   height: 40px;
   width: auto;
 }
 
-/* Configura o tamanho dos icons */
 .icon {
   height: 45px;
   width: auto;
 }
+
 .header a {
   display: flex;
   align-items: center;
   height: 100%;
 }
-/* SIDEBAR */
+
+/* ---- SIDEBAR ---- */
 .sidebar {
   position: fixed;
-  top: 60px; /* começa abaixo do header */
+  top: 60px;
   left: 0;
   width: 190px;
-  height: calc(100vh - 60px); /* ocupa o resto da tela */
+  height: calc(100vh - 60px);
   background: #0C2B4E;
   padding: 10px;
 }
-/* Garante que o nav ocupe toda a largura da sidebar */
+
 .sidebar nav {
   width: 100%;
 }
 
-/* Gerenciar os hyper links da sidebar */
 .sidebar a {
   display: flex;
-  align-items: center;         /* centraliza vertical */
-  justify-content: flex-start; /* alinha itens à esquerda */
-  width: 100%;                 /* garante que o link ocupe toda a largura */
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
   color: #FFFFFF;
-  text-decoration: none;       /* remove linha feia */
+  text-decoration: none;
   margin-bottom: 10px;
   padding: 5px;
   border-radius: 6px;
   transition: 0.2s;
 }
-/* Hover (deixa bonito) */
+
 .sidebar a:hover {
   background: rgba(255, 255, 255, 0.1);
 }
@@ -80,22 +127,22 @@ h1 {
 .sidebar img {
   width: auto;
   height: 25px;
-  flex-shrink: 0;   /* impede que a imagem encolha */
-  margin-left: 8px; /* espaço entre texto e ícone */
+  flex-shrink: 0;
+  margin-left: 8px;
 }
 
 .sidebar span {
   flex: 1;
 }
 
-/* CONTEÚDO - Main */
+/* ---- CONTEÚDO PRINCIPAL ---- */
 .content {
-  margin-top: 60px;    /* espaço do header */
-  margin-left: 190px;  /* espaço da sidebar */
+  margin-top: 60px;
+  margin-left: 190px;
   padding: 20px;
 }
 
-/* Controle dos cards */
+/* ---- CARDS ---- */
 .cards-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -107,8 +154,9 @@ h1 {
   width: 100%;
   border-radius: 16px;
   transition: 0.3s ease;
-  display: block;   /* necessário para a imagem preencher corretamente */
-  overflow: hidden; /* corta a imagem nas bordas arredondadas */
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .card:hover {
@@ -116,37 +164,16 @@ h1 {
   box-shadow: 0 10px 20px rgb(173, 172, 172);
 }
 
-/*-------------> Aqui é H1 <--------------*/
-/* Container com margem superior */
-.cajomax-container {
-  margin-top: 3rem;
+.card img {
+  width: 80%;
+  height: 85%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  margin: auto;
+  border-radius: 12px;
+  margin-top: 5%;
 }
-
-/* Área de destaque centralizada */
-.cajomax-hero {
-  text-align: center;
-  padding: 0rem 0;
-}
-
-/* Título principal com o efeito de sombra */
-.cajomax-title {
-  color: #D4C9BE;
-  text-shadow: 4px 4px 0px #123458;
-  font-family: 'Playfair Display', serif;
-  font-weight: 900;
-  font-size: calc(1.5rem + 7vw);
-  margin-bottom: 0.5rem;
-}
-
-/* Texto do subtítulo */
-.cajomax-subtitle {
-  color: #030303;
-  text-transform: uppercase;
-  font-family: 'Arvo', serif;
-  letter-spacing: 2px;
-  font-size: 1.5rem;
-}
-/*-------------> Aqui é final H1 <--------------*/
 
 .card-titulo {
   display: flex;
@@ -160,86 +187,121 @@ h1 {
   font-size: 16px;
 }
 
-/* Faz a imagem preencher o card sem distorcer */
-.card img {
-  width: 80%;
-  height: 85%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-  margin: auto;
-  border-radius: 12px; /* bordas arredondadas */
-  margin-top: 5%;      /* espaço no topo */
-}
-
-/* Texto abaixo dos cards */
-.content span {
-  background: linear-gradient(to right, #0C2B4E, #1A3D64, #000000); /* Esquema de cores do texto */
-  -webkit-background-clip: text;        /* Mesma coisa que background-clip, suporte WebKit */
-  -webkit-text-fill-color: transparent; /* Deixa o preenchimento transparente pra aparecer o gradiente */
-  background-clip: text;                /* Recorta o background no formato das letras */
-  font-size: 45px;
-  border-bottom: 2px solid black;       /* Borda abaixo do texto dos cards */
-}
-
 /* Gradiente dos cards */
 .card-1 { background: linear-gradient(135deg, #1A3D64, #1D546C); color: #EEEDFE; }
 .card-2 { background: linear-gradient(135deg, #1A3D64, #1D546C); color: #E1F5EE; }
 .card-3 { background: linear-gradient(135deg, #1A3D64, #1D546C); color: #FAECE7; }
-<<<<<<< HEAD
+
+/* ---- HERO / H1 ---- */
+.cajomax-container {
+  margin-top: 3rem;
+}
+
+.cajomax-hero {
+  text-align: center;
+  padding: 0rem 0;
+}
+
+.cajomax-title {
+  color: #D4C9BE;
+  text-shadow: 4px 4px 0px #123458;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: calc(1.5rem + 7vw);
+  margin-bottom: 0.5rem;
+}
+
+.cajomax-subtitle {
+  color: #030303;
+  text-transform: uppercase;
+  font-family: 'Arvo', serif;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+}
+
+/* Texto abaixo dos cards */
+.content span {
+  background: linear-gradient(to right, #0C2B4E, #1A3D64, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 45px;
+  border-bottom: 2px solid black;
+}
+
+/* ---- FOOTER ---- */
+.footer {
+  margin-left: 190px;
+  background: #0C2B4E;
+  color: rgba(255, 255, 255, 0.55);
+  padding: 16px;
+  text-align: center;
+  font-family: 'Arvo', serif;
+  font-size: .8rem;
+  letter-spacing: .1em;
+  position: relative;
+  z-index: 1;
+}
+
 /* ============================================
-   sobre.css — Página Sobre | CajomaX
-   Importar junto com global.css
+   sobre.css — Página Sobre
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Arvo:wght@400;700&display=swap');
-
-/* Ajuste do conteúdo principal nesta página */
 .sobre-content {
-    max-width: 1100px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 /* ---- HERO ---- */
 .sobre-hero {
-    margin-bottom: 3rem;
-    padding-top: 1rem;
+  margin-bottom: 3rem;
+  padding-top: 1rem;
 }
 
 .sobre-label {
-    font-family: 'Arvo', serif;
-    font-size: 0.75rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #0C2B4E;
-    opacity: 0.6;
-    margin-bottom: 0.5rem;
+  font-family: 'Arvo', serif;
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #0C2B4E;
+  opacity: 0.6;
+  margin-bottom: 0.5rem;
 }
 
 .sobre-title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    font-size: clamp(2.5rem, 7vw, 5rem);
-    color: #D4C9BE;
-    text-shadow: 4px 4px 0px #123458;
-    line-height: 1.1;
-    margin: 0 0 1.2rem 0;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  color: #D4C9BE;
+  text-shadow: 4px 4px 0px #123458;
+  line-height: 1.1;
+  margin: 0 0 1.2rem 0;
 }
 
 .sobre-title span {
-    /* sobrescreve o gradiente global de .content span para este contexto */
-    background: linear-gradient(to right, #0C2B4E, #1A3D64, #000000);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-size: inherit;
-    border-bottom: none; /* sem a borda do global neste contexto */
+  background: linear-gradient(to right, #0C2B4E, #1A3D64, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: inherit;
+  border-bottom: none;
 }
 
 .sobre-divider {
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(to right, #0C2B4E, #1A3D64);
-    border-radius: 2px;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #0C2B4E, #1A3D64);
+  border-radius: 2px;
+}
+
+.sobre-subtitle {
+  color: #030303;
+  text-transform: uppercase;
+  font-family: 'Arvo', serif;
+  letter-spacing: 2px;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 /* ---- SEÇÕES ---- */
@@ -249,29 +311,29 @@ h1 {
 }
 
 .sobre-tag {
-    display: inline-block;
-    font-family: 'Arvo', serif;
-    font-size: 0.7rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #ffffff;
-    background: linear-gradient(135deg, #0C2B4E, #1A3D64);
-    padding: 4px 14px;
-    border-radius: 20px;
-    margin-bottom: 1.2rem;
+  display: inline-block;
+  font-family: 'Arvo', serif;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0C2B4E, #1A3D64);
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 1.2rem;
 }
 
 .sobre-texto {
-    font-family: 'Arvo', serif;
-    font-size: 1rem;
-    color: #1a1a2e;
-    line-height: 1.8;
-    max-width: 760px;
-    margin-bottom: 0.8rem;
+  font-family: 'Arvo', serif;
+  font-size: 1rem;
+  color: #1a1a2e;
+  line-height: 1.8;
+  max-width: 760px;
+  margin-bottom: 0.8rem;
 }
 
 .sobre-texto strong {
-    color: #0C2B4E;
+  color: #0C2B4E;
 }
 
 .sobre-texto-center {
@@ -284,19 +346,19 @@ h1 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  justify-content: center; /* 👈 */
+  justify-content: center;
 }
 
 .faixa-card {
-    border-radius: 16px;
-    padding: 28px 24px;
-    color: #ffffff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 16px;
+  padding: 28px 24px;
+  color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .faixa-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 28px rgba(12, 43, 78, 0.25);
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(12, 43, 78, 0.25);
 }
 
 .faixa-adolescente { background: linear-gradient(135deg, #1A3D64, #1D546C); }
@@ -304,22 +366,22 @@ h1 {
 .faixa-idoso       { background: linear-gradient(135deg, #0C2B4E, #1A3D64); }
 
 .faixa-icon {
-    font-size: 2rem;
-    margin-bottom: 12px;
+  font-size: 2rem;
+  margin-bottom: 12px;
 }
 
 .faixa-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    margin: 0 0 10px 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin: 0 0 10px 0;
 }
 
 .faixa-card p {
-    font-family: 'Arvo', serif;
-    font-size: 0.88rem;
-    line-height: 1.7;
-    opacity: 0.9;
-    margin: 0;
+  font-family: 'Arvo', serif;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin: 0;
 }
 
 /* ---- MEMBROS ---- */
@@ -327,123 +389,84 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 140px));
   gap: 16px;
-  justify-content: center; /* 👈 ESSENCIAL */
+  justify-content: center;
 }
 
 .membro-card {
-    background: linear-gradient(135deg, #1A3D64, #1D546C);
-    border-radius: 12px;
-    padding: 20px 12px 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: default;
+  background: linear-gradient(135deg, #1A3D64, #1D546C);
+  border-radius: 12px;
+  padding: 20px 12px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
 }
 
 .membro-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(12, 43, 78, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(12, 43, 78, 0.3);
 }
 
 .membro-inicial {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.15);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #D4C9BE;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #D4C9BE;
 }
 
 .membro-card span {
-    font-family: 'Arvo', serif;
-    font-size: 0.82rem;
-    color: #ffffff;
-    text-align: center;
-    /* sobrescreve o gradiente do global.css para .content span */
-    background: none !important;
-    -webkit-background-clip: unset !important;
-    -webkit-text-fill-color: #ffffff !important;
-    background-clip: unset !important;
-    border-bottom: none !important;
-    font-size: 0.82rem !important;
+  font-family: 'Arvo', serif;
+  font-size: 0.82rem !important;
+  color: #ffffff;
+  text-align: center;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background-clip: unset !important;
+  border-bottom: none !important;
 }
 
-/* destaque para Samuel (autor do projeto) */
 .membro-destaque {
-    background: linear-gradient(135deg, #123458, #0a1f3a);
-    border: 2px solid rgba(212, 201, 190, 0.4);
+  background: linear-gradient(135deg, #123458, #0a1f3a);
+  border: 2px solid rgba(212, 201, 190, 0.4);
 }
 
-/* ---- RODAPÉ DA PÁGINA ---- */
+/* ---- RODAPÉ DA PÁGINA SOBRE ---- */
 .sobre-footer {
-    border-top: 1px solid rgba(12, 43, 78, 0.2);
-    padding-top: 1.5rem;
-    margin-top: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
+  border-top: 1px solid rgba(12, 43, 78, 0.2);
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .sobre-footer span {
-    /* sobrescreve o gradient do global.css */
-    background: none !important;
-    -webkit-background-clip: unset !important;
-    -webkit-text-fill-color: unset !important;
-    background-clip: unset !important;
-    border-bottom: none !important;
-    font-family: 'Arvo', serif;
-    font-size: 0.78rem !important;
-    color: #0C2B4E;
-    opacity: 0.6;
-    letter-spacing: 1px;
-}
-
-/* ---- RESPONSIVO ---- */
-@media (max-width: 768px) {
-    .faixas-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .membros-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .sobre-footer {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
-@media (max-width: 480px) {
-    .membros-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-.sobre-subtitle {
-  color: #030303;
-  text-transform: uppercase;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  background-clip: unset !important;
+  border-bottom: none !important;
   font-family: 'Arvo', serif;
-  letter-spacing: 2px;
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-  text-align: center; /* 👈 centraliza o texto */
+  font-size: 0.78rem !important;
+  color: #0C2B4E;
+  opacity: 0.6;
+  letter-spacing: 1px;
 }
-.sobre-content {
-  max-width: 1100px;
-  margin: 0 auto; /* 👈 ISSO centraliza tudo */
-=======
 
-/* Estilo para o formulário de contato */
+/* ---- FORMULÁRIO DE CONTATO ---- */
 form {
   margin-top: 20px;
   background: #FFFFFF;
@@ -483,7 +506,7 @@ form button:hover {
   background: #094074;
 }
 
-/* Estilo para a seção de FAQ */
+/* ---- FAQ ---- */
 .faq {
   margin-top: 40px;
 }
@@ -509,12 +532,33 @@ form button:hover {
 }
 
 .faq-item p {
-  display: none; /* Escondido por padrão */
+  display: none;
   margin: 10px 0 0;
   padding: 10px;
   background: #F1F1F1;
   border-left: 4px solid #0C2B4E;
   border-radius: 4px;
   color: #333;
->>>>>>> origin/nycollas
+}
+
+/* ---- RESPONSIVO ---- */
+@media (max-width: 768px) {
+  .faixas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .membros-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sobre-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .membros-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

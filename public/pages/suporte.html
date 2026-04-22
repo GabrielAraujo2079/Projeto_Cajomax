@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suporte</title>
+    <title>Suporte – CajomaX</title>
 
     <link rel="icon" href="../assets/icons/icon_abaCajomax.png" type="image/png">
     <link rel="stylesheet" href="../css/global.css">
+
     <style>
+        /* ---- FORMULÁRIO DE SUPORTE ---- */
         .suporte-container {
             max-width: 600px;
             margin: 30px auto;
@@ -80,6 +82,8 @@
 </head>
 
 <body>
+
+    <!-- HEADER -->
     <header class="header">
         <a href="../index.html">
             <img class="icon" src="../assets/icons/mascote_cajomaxIcon.ico" alt="Logo CajomaX">
@@ -89,6 +93,7 @@
         </a>
     </header>
 
+    <!-- SIDEBAR -->
     <aside class="sidebar">
         <nav>
             <a href="../index.html">
@@ -110,8 +115,9 @@
         </nav>
     </aside>
 
+    <!-- CONTEÚDO PRINCIPAL -->
     <main class="content">
-        <div class="container cajomax-container">
+        <div class="cajomax-container">
             <div class="cajomax-hero">
                 <h1 class="cajomax-title">Suporte</h1>
                 <p class="cajomax-subtitle">Como podemos te ajudar?</p>
@@ -120,7 +126,7 @@
 
         <!-- TICKET DE SUPORTE -->
         <div class="suporte-container">
-            <h2>Suporte</h2>
+            <h2>Abrir chamado</h2>
 
             <label for="nome">Nome</label>
             <input type="text" id="nome" placeholder="Seu nome completo">
@@ -143,11 +149,18 @@
             <button class="btn-enviar" onclick="enviarTicket()">Enviar</button>
 
             <div class="mensagem-sucesso" id="mensagem-sucesso">
-                 Problema enviado com sucesso! Entraremos em contato em breve.
+                ✅ Problema enviado com sucesso! Entraremos em contato em breve.
             </div>
         </div>
+
+        <footer class="footer">
+            © 2026 CajomaX — Todos os direitos reservados
+        </footer>
     </main>
 
+    <!--Link js-->
+    <script src="../js/scriptsuporte.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
