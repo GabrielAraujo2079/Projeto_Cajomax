@@ -70,39 +70,67 @@ DB_PASS=sua_senha
 ---
 
 ## 🗄️ Esquema SQL Server
-
-### Tabela `Usuarios`
-
-```sql
+```
+-- ========================================
+-- CAJOMAX - Script de criação do banco
+-- ========================================
+CREATE DATABASE Cajomax;
+GO
+USE Cajomax;
+GO
 CREATE TABLE Usuarios (
-    Id INT IDENTITY(1,1) PRIMARY KEY,
-    Nome NVARCHAR(100) NOT NULL,
-    Email NVARCHAR(150) NOT NULL UNIQUE,
-    SenhaHash NVARCHAR(255) NOT NULL,
-    TipoUsuario NVARCHAR(20) NOT NULL DEFAULT 'comum'
-        CHECK (TipoUsuario IN ('comum', 'admin')),
-    DataCriacao DATETIME NOT NULL DEFAULT GETDATE()
+    Id           INT           IDENTITY(1,1) PRIMARY KEY,
+    Nome         NVARCHAR(100) NOT NULL,
+    Email        NVARCHAR(150) NOT NULL UNIQUE,
+    SenhaHash    NVARCHAR(255) NOT NULL,
+    Idade        INT           NOT NULL CHECK (Idade >= 0),
+    Telefone     NVARCHAR(20)  NOT NULL,
+    Genero       NVARCHAR(20)  NOT NULL CHECK (Genero IN ('Masculino', 'Feminino', 'Outro')),
+    TipoUsuario  NVARCHAR(20)  NOT NULL DEFAULT 'comum' CHECK (TipoUsuario IN ('comum', 'admin')),
+    DataCriacao  DATETIME      NOT NULL DEFAULT GETDATE()
 );
-```
+GO
 
-### Tabela `Eventos`
-
-```sql
 CREATE TABLE Eventos (
-    Id INT IDENTITY(1,1) PRIMARY KEY,
-    Titulo NVARCHAR(200) NOT NULL,
-    Descricao NVARCHAR(800) NOT NULL,
-    DataEvento DATETIME NOT NULL,
-    UsuarioId INT NOT NULL,
-    DataCriacao DATETIME NOT NULL DEFAULT GETDATE(),
+    Id           INT           IDENTITY(1,1) PRIMARY KEY,
+    UsuarioId    INT           NOT NULL,
+    Titulo       NVARCHAR(200) NOT NULL,
+    Descricao    NVARCHAR(800) NOT NULL,
+    DataEvento   DATE          NOT NULL,
+    HorarioEvento TIME         NOT NULL,
+    ImagemPath   NVARCHAR(500) NULL,
+    -- Público alvo
+    IdadeMinima  INT           NOT NULL DEFAULT 0,
+    IdadeMaxima  INT           NOT NULL DEFAULT 120,
+    GeneroAlvo   NVARCHAR(20)  NOT NULL DEFAULT 'Todos' CHECK (GeneroAlvo IN ('Masculino', 'Feminino', 'Todos')),
+    -- Endereço (preenchido via API de CEP)
+    CEP          CHAR(8)       NOT NULL,
+    Rua          NVARCHAR(200) NOT NULL,
+    Numero       NVARCHAR(20)  NOT NULL,
+    Complemento  NVARCHAR(100) NULL,
+    Bairro       NVARCHAR(100) NOT NULL,
+    Cidade       NVARCHAR(100) NOT NULL,
+    Estado       CHAR(2)       NOT NULL,
+    DataCriacao  DATETIME      NOT NULL DEFAULT GETDATE(),
     CONSTRAINT FK_Eventos_Usuarios FOREIGN KEY (UsuarioId)
-        REFERENCES Usuarios(Id)
-        ON DELETE CASCADE
+        REFERENCES Usuarios(Id) ON DELETE CASCADE,
+    CONSTRAINT CK_IdadeMinMax CHECK (IdadeMinima <= IdadeMaxima)
 );
+GO
+
+CREATE TABLE TicketsSuporte (
+    Id             INT           IDENTITY(1,1) PRIMARY KEY,
+    UsuarioId      INT           NOT NULL,
+    Assunto        NVARCHAR(200) NOT NULL,
+    Mensagem       NVARCHAR(2000) NOT NULL,
+    Status         NVARCHAR(20)  NOT NULL DEFAULT 'aberto' CHECK (Status IN ('aberto', 'em_andamento', 'fechado')),
+    DataAbertura   DATETIME      NOT NULL DEFAULT GETDATE(),
+    DataFechamento DATETIME      NULL,
+    CONSTRAINT FK_Tickets_Usuarios FOREIGN KEY (UsuarioId)
+        REFERENCES Usuarios(Id) ON DELETE CASCADE
+);
+GO
 ```
-
-> 💡 No GitHub, blocos de código `sql` já ganham botão de copiar automaticamente no canto superior direito.
-
 ---
 
 ## 📐 Arquitetura
