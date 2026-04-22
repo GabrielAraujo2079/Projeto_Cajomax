@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- Página principal/raiz -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CajomaX</title>
+    
+    <link rel="icon" href="assets/icons/icon_abaCajomax.png" type="image/png">
+    <!--Link Css global (o css usado em todas as paginas)-->
+    <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html">
+            <img class="icon" src="assets/icons/mascote_cajomaxIcon.ico" alt="Logo CajomaX">
+        </a>
+        <div class="header-right">
+            <button id="btnDark" class="btn-dark-header" title="Modo noturno">
+                <span id="darkIcon">🌙</span>
+            </button>
+            <a href="login.html">
+                <img class="img" src="assets/icons/user_icon.png" alt="Logar">
+            </a>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <nav>
+            <a href="index.html">
+                <img src="assets/icons/home.webp" alt="Home">
+                <span>Home</span>
+            </a>
+            <a href="pages/config.html">
+                <img src="assets/icons/setting.webp" alt="Config">
+                <span>Configuração</span>
+            </a>
+            <a href="pages/suporte.html">
+                <img src="assets/icons/support.webp" alt="Suporte">
+                <span>Suporte</span>
+            </a>
+            <a href="pages/sobre.html">
+                <img src="assets/icons/question.webp" alt="Sobre">
+                <span>Sobre</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <!--H1-->
+        <div class="container cajomax-container">
+            <div class="cajomax-hero">
+                <h1 class="cajomax-title">
+                    CajomaX
+                </h1>
+                <p class="cajomax-subtitle">
+                    Dos pequenos ➔ aos grandes | 2026
+                </p>
+            </div>
+        </div>
+        <!--Fim H1-->
+
+        <div class="cards-container">
+            <div class="card-titulo">
+                <a class="card card-1" href="pages/infantil.html">
+                    <img src="assets/imagem/imagem_adulta.jpg" alt="Adolescente">
+                </a>
+                <span>Adolescentes</span>
+            </div>
+            <div class="card-titulo">
+                <a class="card card-2" href="pages/adulto.html">
+                    <img src="assets/imagem/Adultooo.png" alt="Adulto">
+                </a>
+                <span>Adultos</span>
+            </div>
+            <div class="card-titulo">
+                <a class="card card-3" href="pages/maioridade.html">
+                    <img src="assets/imagem/imagem_velho.jpg" alt="Grandes idades">
+                </a>
+                <span>Grandes idades</span>
+            </div>
+        </div>
+    </main>
+
+    <!--Link js-->
+    <script src="js/script.js"></script>
+</body>
+</html>
