@@ -1,0 +1,248 @@
+/* ── config.css – CajomaX ─────────────────────────────── */
+ 
+body.dark-mode {
+    background: #0d1b2e !important;
+    color: #dce8f8;
+}
+body.dark-mode .content {
+    background: #0d1b2e;
+}
+body.dark-mode main {
+    background: #0d1b2e;
+}
+body.dark-mode .footer {
+    background: #071120;
+    color: rgba(255, 255, 255, 0.35);
+}
+ 
+.cfg-area {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+}
+ 
+.cfg-page-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #0C2B4E;
+    margin: 0 0 6px;
+    text-align: left;
+}
+body.dark-mode .cfg-page-title { color: #a8c8f0; }
+ 
+.cfg-page-sub {
+    font-size: 13.5px;
+    color: #8a95a3;
+    margin-bottom: 2.2rem;
+}
+ 
+/* ── Seções ───────────────────────────────────────────── */
+.cfg-sec { margin-bottom: 2.2rem; }
+.cfg-sec h2 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: #0C2B4E;
+    margin: 0 0 10px;
+    padding-left: 2px;
+}
+body.dark-mode .cfg-sec h2 { color: #7eb8f7; }
+ 
+/* ── Card ─────────────────────────────────────────────── */
+.cfg-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    overflow: hidden;
+}
+body.dark-mode .cfg-card { background: #16213e; border-color: #2a3a5e; }
+ 
+/* ── Row dentro do card ───────────────────────────────── */
+.cfg-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 1.1rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+body.dark-mode .cfg-row { border-bottom-color: #1e2540; }
+.cfg-row:last-child { border-bottom: none; }
+ 
+.cfg-row-info { flex: 1; padding-right: 14px; }
+.cfg-row-label { font-size: 14px; font-weight: 500; color: #1a202c; margin-bottom: 2px; }
+body.dark-mode .cfg-row-label { color: #dce8f8; }
+.cfg-row-sub { font-size: 12px; color: #9aa3b0; }
+ 
+/* ── Toggle ───────────────────────────────────────────── */
+.tog { position: relative; width: 44px; height: 24px; flex-shrink: 0; }
+.tog input { opacity: 0; width: 0; height: 0; }
+.tog-sl {
+    position: absolute;
+    inset: 0;
+    background: #c9d2de;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: background 0.25s;
+}
+.tog-sl::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 3px;
+    top: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.25s;
+}
+.tog input:checked + .tog-sl { background: #0C2B4E; }
+body.dark-mode .tog input:checked + .tog-sl { background: #4a90d9; }
+.tog input:checked + .tog-sl::before { transform: translateX(20px); }
+ 
+/* ── Select ───────────────────────────────────────────── */
+.cfg-select {
+    padding: 7px 10px;
+    border: 1px solid #d1d9e4;
+    border-radius: 8px;
+    font-size: 13px;
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+    font-family: inherit;
+}
+body.dark-mode .cfg-select { background: #1e2d4a; border-color: #3a4d6e; color: #c5cfe0; }
+ 
+/* ── Botões de ação ───────────────────────────────────── */
+.cfg-btn-action {
+    padding: 7px 15px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+}
+.outline { border: 1px solid #0C2B4E; background: transparent; color: #0C2B4E; }
+body.dark-mode .outline { border-color: #4a90d9; color: #7eb8f7; }
+.danger { border: 1px solid #c0392b; background: transparent; color: #c0392b; }
+ 
+/* Input de texto dentro do card */
+.cfg-row input[type="text"],
+.cfg-row input[type="email"] {
+    padding: 6px 9px;
+    border: 1px solid #d1d9e4;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: inherit;
+    background: #fff;
+    color: #333;
+}
+body.dark-mode .cfg-row input[type="text"],
+body.dark-mode .cfg-row input[type="email"] {
+    background: #1e2d4a;
+    border-color: #3a4d6e;
+    color: #c5cfe0;
+}
+ 
+/* ── Blocos de texto (sobre / privacidade) ────────────── */
+.txt-blk {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.2rem 1.3rem;
+    margin-bottom: 10px;
+}
+body.dark-mode .txt-blk { background: #16213e; border-color: #2a3a5e; }
+.txt-blk h3 { font-size: 14px; font-weight: 700; color: #0C2B4E; margin: 0 0 7px; }
+body.dark-mode .txt-blk h3 { color: #7eb8f7; }
+.txt-blk p { font-size: 13px; color: #55657a; line-height: 1.8; margin: 0; }
+body.dark-mode .txt-blk p { color: #8a9ab5; }
+ 
+/* ── Badge de versão ──────────────────────────────────── */
+.badge-v {
+    display: inline-block;
+    margin-top: 10px;
+    background: #eef3ff;
+    color: #0C2B4E;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 12px;
+    border-radius: 20px;
+}
+body.dark-mode .badge-v { background: #1a2d50; color: #7eb8f7; }
+ 
+.priv-date { font-size: 12px; color: #b0bac6; margin: -6px 0 1.2rem 2px; }
+ 
+/* ── FAQ (acordeão) ───────────────────────────────────── */
+.faq {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+body.dark-mode .faq { background: #16213e; border-color: #2a3a5e; }
+ 
+.faq-btn {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 13px 1rem;
+    text-align: left;
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #1a202c;
+    font-family: inherit;
+}
+body.dark-mode .faq-btn { color: #dce8f8; }
+.faq-btn:hover { background: #f8f9fb; }
+body.dark-mode .faq-btn:hover { background: #1e2840; }
+ 
+.faq-arrow {
+    font-size: 11px;
+    color: #9aa3b0;
+    transition: transform 0.25s;
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+.faq-btn.open .faq-arrow { transform: rotate(180deg); }
+ 
+.faq-body {
+    display: none;
+    padding: 2px 1rem 13px;
+    font-size: 13px;
+    color: #55657a;
+    line-height: 1.75;
+    border-top: 1px solid #f0f2f5;
+}
+body.dark-mode .faq-body { color: #8a9ab5; border-top-color: #1e2540; }
+.faq-body.open { display: block; }
+ 
+/* ── Divisor ──────────────────────────────────────────── */
+.cfg-divider {
+    border: none;
+    border-top: 1px solid #e8ecf0;
+    margin: 2rem 0;
+}
+body.dark-mode .cfg-divider { border-top-color: #1e2a40; }
+ 
+/* ── Toast ────────────────────────────────────────────── */
+#toast {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: #0C2B4E;
+    color: white;
+    padding: 11px 18px;
+    border-radius: 10px;
+    font-size: 13px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 9999;
+}
+body.dark-mode #toast { background: #4a90d9; }
+#toast.show { opacity: 1; }
