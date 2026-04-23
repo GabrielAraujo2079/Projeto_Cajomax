@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Arvo:wght@400;700&display=swap');
 
-/* ---- RESET BÁSICO ---- */
+/* reset básico: bordas, corpo e texto central */
 * {
   box-sizing: border-box;
 }
@@ -20,7 +20,7 @@ h1 {
   text-align: center;
 }
 
-/* ---- BOLHAS DE FUNDO ---- */
+/* fundo animado com bolhas subindo */
 .bolhas {
   position: fixed;
   top: 0;
@@ -53,6 +53,7 @@ h1 {
   100% { transform: translateY(-10vh) scale(1); }
 }
 
+/* algumas bolhas ficam laranjas para variar */
 .bolhas span:nth-of-type(even) {
   background: #ff7f50;
   box-shadow: 0 0 0 10px #ff7f5044,
@@ -60,7 +61,7 @@ h1 {
               0 0 100px #ff7f50;
 }
 
-/* ---- HEADER ---- */
+/* cabeçalho fixo no topo */
 .header {
   position: fixed;
   top: 0;
@@ -92,7 +93,7 @@ h1 {
   height: 100%;
 }
 
-/* ---- SIDEBAR ---- */
+/* barra lateral fixa com links */
 .sidebar {
   position: fixed;
   top: 60px;
@@ -135,14 +136,14 @@ h1 {
   flex: 1;
 }
 
-/* ---- CONTEÚDO PRINCIPAL ---- */
+/* conteúdo principal empurrado para direita por causa da sidebar */
 .content {
   margin-top: 60px;
   margin-left: 190px;
   padding: 20px;
 }
 
-/* ---- FOOTER ---- */
+/* rodapé simples alinhado com o conteúdo */
 .footer {
   margin-left: 190px;
   background: #0C2B4E;

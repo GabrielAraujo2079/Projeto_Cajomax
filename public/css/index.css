@@ -1,4 +1,4 @@
-/* ---- HERO / H1 ---- */
+/* hero com título grande e subtítulo */
 .cajomax-container {
   margin-top: 3rem;
 }
@@ -25,7 +25,7 @@
   font-size: 1.5rem;
 }
 
-/* ---- CARDS ---- */
+/* cards da página principal */
 .cards-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -70,12 +70,12 @@
   font-size: 16px;
 }
 
-/* Gradiente dos cards */
+/* cores gradientes para cada card */
 .card-1 { background: linear-gradient(135deg, #1A3D64, #1D546C); color: #EEEDFE; }
 .card-2 { background: linear-gradient(135deg, #1A3D64, #1D546C); color: #E1F5EE; }
 .card-3 { background: linear-gradient(135deg, #1A3D64, #1D546C); color: #FAECE7; }
 
-/* Texto abaixo dos cards */
+/* texto com gradiente no final da página */
 .content span {
   background: linear-gradient(to right, #0C2B4E, #1A3D64, #000000);
   -webkit-background-clip: text;

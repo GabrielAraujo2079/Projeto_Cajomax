@@ -16,27 +16,31 @@ Otto · Gabriel Araujo · Pablo · Felipe · Enzo · Matheus · Marcos · Samuel
 │   ├── index.html         ← entrada principal
 │   │
 │   ├── /pages             ← outras telas
-│   │   ├── login.html
-│   │   └── dashboard.html
+│   │   ├── adulto.html
+│   │   ├── config.html
+│   │   ├── infantil.html
+│   │   ├── maioridade.html
+│   │   ├── sobre.html
+│   │   └── suporte.html
 │   │
 │   ├── /css               ← estilos
-│   │   ├── global.css     ← reset + variáveis + tema
-│   │   ├── layout.css     ← estrutura (header, container)
-│   │   └── components.css ← botões, cards, inputs
+│   │   ├── global.css
+│   │   ├── index.css
+│   │   ├── login.css
+│   │   ├── sobre.css
+│   │   └── suporte.css
 │   │
 │   ├── /js                ← scripts do front
-│   │   ├── main.js        ← eventos e DOM
-│   │   └── api.js         ← comunicação com Node (fetch)
+│   │   └── script.js
 │   │
 │   └── /assets            ← arquivos estáticos
-│       ├── /images
 │       ├── /icons
-│       └── /fonts
+│       └── /imagem
 │
-├── /src                   ← BACKEND (Node)
-│
+├── .env.example
 ├── server.js              ← inicia o servidor
-└── package.json
+├── package.json
+└── README.md
 ```
 
 ---
