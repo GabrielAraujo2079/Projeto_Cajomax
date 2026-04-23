@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte – CajomaX</title>
+
+    <link rel="icon" href="../assets/icons/icon_abaCajomax.png" type="image/png">
+    <!--Link CSS global (o css usado em todas as paginas)-->
+    <link rel="stylesheet" href="../css/global.css">
+    <!--Link do CSS proprio da pagina suporte.css -->
+    <link rel="stylesheet" href="../css/suporte.css">
+
+    <style>
+        /* ---- FORMULÁRIO DE SUPORTE ---- */
+        .suporte-container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+        }
+
+        .suporte-container h2 {
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: #333;
+        }
+
+        .suporte-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .suporte-container input,
+        .suporte-container select,
+        .suporte-container textarea {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            box-sizing: border-box;
+        }
+
+        .suporte-container textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-enviar {
+            width: 100%;
+            padding: 12px;
+            background-color: #f5a623;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-enviar:hover {
+            background-color: #e09510;
+        }
+
+        .mensagem-sucesso {
+            display: none;
+            margin-top: 16px;
+            padding: 12px;
+            background: #e6f9ee;
+            border: 1px solid #4caf50;
+            border-radius: 8px;
+            color: #2e7d32;
+            text-align: center;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <a href="../index.html">
+            <img class="icon" src="../assets/icons/mascote_cajomaxIcon.ico" alt="Logo CajomaX">
+        </a>
+        <a href="../login.html">
+            <img class="img" src="../assets/icons/user_icon.png" alt="Logar">
+        </a>
+    </header>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <nav>
+            <a href="../index.html">
+                <img src="../assets/icons/home.webp" alt="Home">
+                <span>Home</span>
+            </a>
+            <a href="config.html">
+                <img src="../assets/icons/setting.webp" alt="Config">
+                <span>Configuração</span>
+            </a>
+            <a href="suporte.html">
+                <img src="../assets/icons/support.webp" alt="Suporte">
+                <span>Suporte</span>
+            </a>
+            <a href="sobre.html">
+                <img src="../assets/icons/question.webp" alt="Sobre">
+                <span>Sobre</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="content">
+        <div class="cajomax-container">
+            <div class="cajomax-hero">
+                <h1 class="cajomax-title">Suporte</h1>
+                <p class="cajomax-subtitle">Como podemos te ajudar?</p>
+            </div>
+        </div>
+
+        <!-- TICKET DE SUPORTE -->
+        <div class="suporte-container">
+            <h2>Abrir chamado</h2>
+
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" placeholder="Seu nome completo">
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="seu@email.com">
+
+            <label for="categoria">Categoria</label>
+            <select id="categoria">
+                <option value="">Selecione uma categoria</option>
+                <option value="conta">Problema com conta</option>
+                <option value="tecnico">Erro técnico</option>
+                <option value="sugestao">Sugestão</option>
+                <option value="outro">Outro</option>
+            </select>
+
+            <label for="mensagem">Descrição do problema</label>
+            <textarea id="mensagem" placeholder="Descreva seu problema com detalhes..."></textarea>
+
+            <button class="btn-enviar" onclick="enviarTicket()">Enviar</button>
+
+            <div class="mensagem-sucesso" id="mensagem-sucesso">
+                ✅ Problema enviado com sucesso! Entraremos em contato em breve.
+            </div>
+        </div>
+
+        <footer class="footer">
+            © 2026 CajomaX — Todos os direitos reservados
+        </footer>
+    </main>
+
+    <!--Link js-->
+    <script src="../js/scriptsuporte.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

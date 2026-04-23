@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Arvo:wght@400;700&display=swap');
+
+/* ---- RESET BÁSICO ---- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #F1EFEC;
+}
+
+main {
+  position: relative;
+  height: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* ---- BOLHAS DE FUNDO ---- */
+.bolhas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bolhas span {
+  width: 30px;
+  height: 30px;
+  background: #1D546C;
+  flex-shrink: 0;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #1D546C44,
+              0 0 50px #1D546C,
+              0 0 100px #1D546C;
+  animation: animar calc(30s / var(--i)) linear infinite;
+}
+
+@keyframes animar {
+  0%   { transform: translateY(100vh) scale(0); }
+  100% { transform: translateY(-10vh) scale(1); }
+}
+
+.bolhas span:nth-of-type(even) {
+  background: #ff7f50;
+  box-shadow: 0 0 0 10px #ff7f5044,
+              0 0 50px #ff7f50,
+              0 0 100px #ff7f50;
+}
+
+/* ---- HEADER ---- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #0C2B4E;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+.img {
+  height: 40px;
+  width: auto;
+}
+
+.icon {
+  height: 45px;
+  width: auto;
+}
+
+.header a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* ---- SIDEBAR ---- */
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 190px;
+  height: calc(100vh - 60px);
+  background: #0C2B4E;
+  padding: 10px;
+}
+
+.sidebar nav {
+  width: 100%;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.sidebar a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar img {
+  width: auto;
+  height: 25px;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.sidebar span {
+  flex: 1;
+}
+
+/* ---- CONTEÚDO PRINCIPAL ---- */
+.content {
+  margin-top: 60px;
+  margin-left: 190px;
+  padding: 20px;
+}
+
+/* ---- FOOTER ---- */
+.footer {
+  margin-left: 190px;
+  background: #0C2B4E;
+  color: rgba(255, 255, 255, 0.55);
+  padding: 16px;
+  text-align: center;
+  font-family: 'Arvo', serif;
+  font-size: .8rem;
+  letter-spacing: .1em;
+  position: relative;
+  z-index: 1;
+}
