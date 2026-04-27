@@ -1,0 +1,94 @@
+/* hero com título grande e subtítulo */
+.cajomax-container {
+  margin-top: 3rem;
+}
+
+.cajomax-hero {
+  text-align: center;
+  padding: 0rem 0;
+}
+
+.cajomax-title {
+  color: #D4C9BE;
+  text-shadow: 4px 4px 0px #123458;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: calc(1.5rem + 7vw);
+  margin-bottom: 0.5rem;
+}
+
+.cajomax-subtitle {
+  color: #030303;
+  text-transform: uppercase;
+  font-family: 'Arvo', serif;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+}
+
+/* cards da página principal */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+}
+
+.card {
+  height: 500px;
+  width: 100%;
+  border-radius: 16px;
+  transition: 0.3s ease;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 10px 20px rgb(173, 172, 172);
+}
+
+.card img {
+  width: 80%;
+  height: 85%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  margin: auto;
+  border-radius: 12px;
+  margin-top: 5%;
+}
+
+.card-titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-wrapper span {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+/* cores gradientes para cada card */
+.card-1 { background: linear-gradient(135deg, #1A3D64, #1D546C); color: #EEEDFE; }
+.card-2 { background: linear-gradient(135deg, #1A3D64, #1D546C); color: #E1F5EE; }
+.card-3 { background: linear-gradient(135deg, #1A3D64, #1D546C); color: #FAECE7; }
+
+/* texto com gradiente no final da página */
+.content span {
+  background: linear-gradient(to right, #0C2B4E, #1A3D64, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 45px;
+  border-bottom: 2px solid black;
+}
+/* ── Dark mode: texto gradiente destacado ─────────────── */
+body.dark-mode .content span {
+  background: linear-gradient(to right, #4a90d9, #7eb8f7, #a8d8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border-bottom: 2px solid #4a90d9;
+}
