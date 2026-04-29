@@ -1,0 +1,361 @@
+/* ============================================
+   criarConta.css — Página de Criação de Conta
+   Cajomax · 2026
+   ============================================ */
+
+/* ── Wrapper centralizado ── */
+.criar-conta-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: calc(100vh - 120px);
+    padding: 40px 16px 40px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Card principal ── */
+.criar-conta-card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(29, 84, 108, 0.15);
+    border-radius: 16px;
+    padding: 40px 36px 36px;
+    width: 100%;
+    max-width: 560px;
+    box-shadow:
+        0 4px 24px rgba(12, 43, 78, 0.12),
+        0 1px 4px rgba(12, 43, 78, 0.08);
+    animation: fadeSlideUp 0.45s ease both;
+}
+
+@keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Cabeçalho do card ── */
+.card-header {
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.card-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #0C2B4E;
+    margin: 0 0 6px;
+    letter-spacing: -0.02em;
+}
+
+.card-subtitulo {
+    font-family: 'Arvo', serif;
+    font-size: 0.85rem;
+    color: #5a7a90;
+    margin: 0;
+}
+
+/* ── Grid do formulário ── */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 20px;
+}
+
+.campo-full {
+    grid-column: 1 / -1;
+}
+
+/* ── Campo individual ── */
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo label {
+    font-family: 'Arvo', serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #0C2B4E;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="password"],
+.campo input[type="tel"],
+.campo input[type="number"] {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #bcd0de;
+    border-radius: 8px;
+    font-family: 'Arvo', serif;
+    font-size: 0.9rem;
+    color: #0C2B4E;
+    background: #f7fafc;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.campo input:focus {
+    border-color: #1D546C;
+    box-shadow: 0 0 0 3px rgba(29, 84, 108, 0.12);
+    background: #fff;
+}
+
+.campo input.input-erro {
+    border-color: #e05252;
+    background: #fff5f5;
+}
+
+/* ── Senha com botão de toggle ── */
+.input-senha-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-senha-wrapper input {
+    padding-right: 42px;
+}
+
+.toggle-senha {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 2px 4px;
+    line-height: 1;
+    opacity: 0.55;
+    transition: opacity 0.2s;
+}
+
+.toggle-senha:hover {
+    opacity: 1;
+}
+
+/* ── Gênero (radio buttons customizados) ── */
+.genero-opcoes {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.genero-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 8px 16px;
+    border: 1.5px solid #bcd0de;
+    border-radius: 8px;
+    font-family: 'Arvo', serif;
+    font-size: 0.88rem;
+    color: #1D546C;
+    background: #f7fafc;
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
+    user-select: none;
+}
+
+.genero-label input[type="radio"] {
+    display: none;
+}
+
+.genero-label:has(input:checked) {
+    border-color: #1D546C;
+    background: #1D546C;
+    color: #fff;
+}
+
+.genero-label:hover {
+    border-color: #1D546C;
+    background: rgba(29, 84, 108, 0.07);
+}
+
+/* ── Mensagem de erro por campo ── */
+.campo-erro {
+    font-family: 'Arvo', serif;
+    font-size: 0.75rem;
+    color: #e05252;
+    min-height: 14px;
+    line-height: 1.3;
+}
+
+/* ── Mensagem de feedback global ── */
+.mensagem {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-family: 'Arvo', serif;
+    font-size: 0.88rem;
+    margin-bottom: 20px;
+    animation: fadeSlideUp 0.3s ease both;
+}
+
+.mensagem.sucesso {
+    background: #e8f5e9;
+    border: 1px solid #81c784;
+    color: #2e7d32;
+}
+
+.mensagem.erro {
+    background: #ffebee;
+    border: 1px solid #e57373;
+    color: #c62828;
+}
+
+.oculto {
+    display: none !important;
+}
+
+/* ── Botão principal ── */
+.btn-criar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 28px;
+    padding: 13px;
+    background: #0C2B4E;
+    color: #fff;
+    font-family: 'Arvo', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(12, 43, 78, 0.25);
+}
+
+.btn-criar:hover {
+    background: #1D546C;
+    box-shadow: 0 4px 16px rgba(29, 84, 108, 0.35);
+}
+
+.btn-criar:active {
+    transform: scale(0.98);
+}
+
+.btn-criar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ── Loader spinner ── */
+.loader {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ── Link para login ── */
+.link-login {
+    text-align: center;
+    font-family: 'Arvo', serif;
+    font-size: 0.82rem;
+    color: #5a7a90;
+    margin-top: 16px;
+    margin-bottom: 0;
+}
+
+.link-login a {
+    color: #1D546C;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.link-login a:hover {
+    color: #ff7f50;
+    text-decoration: underline;
+}
+
+/* ── Dark Mode ── */
+body.dark-mode .criar-conta-card {
+    background: rgba(13, 27, 46, 0.92);
+    border-color: rgba(29, 84, 108, 0.3);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .card-titulo {
+    color: #dce8f8;
+}
+
+body.dark-mode .card-subtitulo {
+    color: #7aa5bf;
+}
+
+body.dark-mode .campo label {
+    color: #a8c8e0;
+}
+
+body.dark-mode .campo input[type="text"],
+body.dark-mode .campo input[type="email"],
+body.dark-mode .campo input[type="password"],
+body.dark-mode .campo input[type="tel"],
+body.dark-mode .campo input[type="number"] {
+    background: #0a1929;
+    border-color: rgba(29, 84, 108, 0.5);
+    color: #dce8f8;
+}
+
+body.dark-mode .campo input:focus {
+    border-color: #4a9fc0;
+    box-shadow: 0 0 0 3px rgba(74, 159, 192, 0.2);
+    background: #0d2030;
+}
+
+body.dark-mode .genero-label {
+    background: #0a1929;
+    border-color: rgba(29, 84, 108, 0.5);
+    color: #a8c8e0;
+}
+
+body.dark-mode .genero-label:has(input:checked) {
+    background: #1D546C;
+    color: #fff;
+    border-color: #1D546C;
+}
+
+body.dark-mode .link-login {
+    color: #7aa5bf;
+}
+
+/* ── Responsividade ── */
+@media (max-width: 640px) {
+    .criar-conta-card {
+        padding: 28px 20px 24px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .campo-full {
+        grid-column: 1;
+    }
+
+    .card-titulo {
+        font-size: 1.6rem;
+    }
+
+    .genero-opcoes {
+        gap: 8px;
+    }
+}

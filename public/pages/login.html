@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- Página de Login -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CajomaX — Login</title>
+
+    <link rel="icon" href="../assets/icons/icon_abaCajomax.png" type="image/png">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+    <!-- ── HEADER ── -->
+    <header class="header">
+        <a href="../index.html">
+            <img class="icon" src="../assets/icons/mascote_cajomaxIcon.ico" alt="Logo CajomaX">
+        </a>
+        <a href="login.html">
+            <img class="img" src="../assets/icons/user_icon.png" alt="Logar">
+        </a>
+    </header>
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="sidebar">
+        <nav>
+            <a href="../index.html">
+                <img src="../assets/icons/home.webp" alt="Home">
+                <span>Home</span>
+            </a>
+            <a href="config.html">
+                <img src="../assets/icons/setting.webp" alt="Config">
+                <span>Configuração</span>
+            </a>
+            <a href="suporte.html">
+                <img src="../assets/icons/support.webp" alt="Suporte">
+                <span>Suporte</span>
+            </a>
+            <a href="sobre.html">
+                <img src="../assets/icons/question.webp" alt="Sobre">
+                <span>Sobre</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- ── BOLHAS ── -->
+    <div class="bolhas">
+        <span style="--i:0"></span>
+        <span style="--i:13"></span>
+        <span style="--i:14"></span>
+        <span style="--i:4"></span>
+        <span style="--i:21"></span>
+        <span style="--i:9"></span>
+        <span style="--i:18"></span>
+        <span style="--i:4"></span>
+        <span style="--i:8"></span>
+        <span style="--i:5"></span>
+        <span style="--i:9"></span>
+        <span style="--i:18"></span>
+        <span style="--i:13"></span>
+        <span style="--i:16"></span>
+        <span style="--i:12"></span>
+    </div>
+
+    <!-- ── CONTEÚDO PRINCIPAL ── -->
+    <main class="content">
+        <div class="login-wrapper">
+            <div class="login-card">
+                <div class="card-header">
+                    <h1 class="card-titulo">Entrar</h1>
+                    <p class="card-subtitulo">Acesse sua conta CajomaX</p>
+                </div>
+
+                <!-- Mensagem de feedback -->
+                <div id="mensagem" class="mensagem oculto"></div>
+
+                <!-- E-mail -->
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Ex.: maria@email.com"
+                        maxlength="150"
+                        required
+                    >
+                    <span class="campo-erro" id="erro-email"></span>
+                </div>
+
+                <!-- Senha -->
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <div class="input-senha-wrapper">
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            placeholder="Sua senha"
+                            maxlength="255"
+                            required
+                        >
+                        <button type="button" class="toggle-senha" aria-label="Mostrar senha" data-alvo="senha">
+                            👁
+                        </button>
+                    </div>
+                    <span class="campo-erro" id="erro-senha"></span>
+                </div>
+
+                <!-- Botão -->
+                <button type="button" id="btnLogin" class="btn-login">
+                    <span id="btnTexto">Entrar</span>
+                    <span id="btnLoader" class="loader oculto"></span>
+                </button>
+
+                <p class="link-cadastro">
+                    Não tem conta? <a href="criarConta.html">Criar conta</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        © 2026 CajomaX — Todos os direitos reservados
+    </footer>
+
+    <script src="../js/login.js"></script>
+</body>
+</html>

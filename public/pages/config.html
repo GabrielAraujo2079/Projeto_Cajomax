@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- Página de Configurações -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações – CajomaX</title>
+
+    <!--Link Css global-->
+    <link rel="icon" href="../assets/icons/icon_abaCajomax.png" type="image/png">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/config.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <a href="../index.html">
+            <img class="icon" src="../assets/icons/mascote_cajomaxIcon.ico" alt="Logo CajomaX">
+        </a>
+        <div style="display:flex;align-items:center;gap:10px;">
+            <a href="login.html">
+                <img class="img" src="../assets/icons/user_icon.png" alt="Logar">
+            </a>
+        </div>
+    </header>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <nav>
+            <a href="../index.html">
+                <img src="../assets/icons/home.webp" alt="Home">
+                <span>Home</span>
+            </a>
+            <a href="config.html">
+                <img src="../assets/icons/setting.webp" alt="Config">
+                <span>Configuração</span>
+            </a>
+            <a href="suporte.html">
+                <img src="../assets/icons/support.webp" alt="Suporte">
+                <span>Suporte</span>
+            </a>
+            <a href="sobre.html">
+                <img src="../assets/icons/question.webp" alt="Sobre">
+                <span>Sobre</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="content">
+        <div class="cfg-area">
+
+            <h1 class="cfg-page-title">Configurações</h1>
+            <p class="cfg-page-sub">Gerencie suas preferências e informações do CajomaX.</p>
+
+            <!-- APARÊNCIA -->
+            <div class="cfg-sec" id="sec-aparencia">
+                <h2><img id="icone-aparencia" src="../assets/icons/aparencia_gabrielcolor.png" alt="Aparência" style="height:16px;vertical-align:middle;margin-right:6px;">APARÊNCIA</h2>
+                <div class="cfg-card">
+                    <div class="cfg-row">
+                        <div class="cfg-row-info">
+                            <div class="cfg-row-label">Modo noturno</div>
+                            <div class="cfg-row-sub">Ativa o tema escuro em todas as páginas</div>
+                        </div>
+                        <label class="tog"><input type="checkbox" id="togDark"><span class="tog-sl"></span></label>
+                    </div>
+                    <div class="cfg-row">
+                        <div class="cfg-row-info">
+                            <div class="cfg-row-label">Tamanho da fonte</div>
+                            <div class="cfg-row-sub">Ajusta o tamanho do texto em toda a interface</div>
+                        </div>
+                        <select class="cfg-select" id="selFonte">
+                            <option value="small">Pequena</option>
+                            <option value="medium" selected>Média</option>
+                            <option value="large">Grande</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="cfg-divider">
+
+            <!-- NOTIFICAÇÕES -->
+            <div class="cfg-sec" id="sec-notificacoes">
+                <h2><img src="../assets/icons/notificacao.png" alt="Notificações" style="height:16px;vertical-align:middle;margin-right:6px;">NOTIFICAÇÕES</h2>
+                <div class="cfg-card">
+                    <div class="cfg-row">
+                        <div class="cfg-row-info"><div class="cfg-row-label">Novidades e atualizações</div><div class="cfg-row-sub">Receba e-mails sobre novas funcionalidades</div></div>
+                        <label class="tog"><input type="checkbox" checked><span class="tog-sl"></span></label>
+                    </div>
+                    <div class="cfg-row">
+                        <div class="cfg-row-info"><div class="cfg-row-label">Alertas de segurança</div><div class="cfg-row-sub">Notificações sobre atividade suspeita</div></div>
+                        <label class="tog"><input type="checkbox" checked><span class="tog-sl"></span></label>
+                    </div>
+                    <div class="cfg-row">
+                        <div class="cfg-row-info"><div class="cfg-row-label">Promoções</div><div class="cfg-row-sub">Ofertas e conteúdos exclusivos</div></div>
+                        <label class="tog"><input type="checkbox"><span class="tog-sl"></span></label>
+                    </div>
+                    <div class="cfg-row">
+                        <div class="cfg-row-info"><div class="cfg-row-label">Notificações push</div><div class="cfg-row-sub">Alertas diretamente no navegador</div></div>
+                        <label class="tog"><input type="checkbox"><span class="tog-sl"></span></label>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="cfg-divider">
+
+            <!-- CONTA -->
+            <div class="cfg-sec" id="sec-conta">
+                <h2>👤 CONTA</h2>
+                <div class="cfg-card">
+                    <div class="cfg-row">
+                        <div class="cfg-row-info"><div class="cfg-row-label">Nome de usuário</div><div class="cfg-row-sub">Visível publicamente</div></div>
+                        <input type="text" placeholder="Seu nome" style="width:155px;">
+                    </div>
+                    <div class="cfg-row">
+                        <div class="cfg-row-info"><div class="cfg-row-label">E-mail</div><div class="cfg-row-sub">Usado para login e comunicações</div></div>
+                        <input type="email" placeholder="seu@email.com" style="width:175px;">
+                    </div>
+                    <div class="cfg-row">
+                        <div class="cfg-row-info"><div class="cfg-row-label">Alterar senha</div><div class="cfg-row-sub">Recomendamos senhas fortes e únicas</div></div>
+                        <button class="cfg-btn-action outline" onclick="toast('Funcionalidade em breve!')">Alterar</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="cfg-divider">
+
+
+            <!-- AJUDA -->
+            <div class="cfg-sec" id="sec-ajuda">
+                <h2>❓ Ajuda</h2>
+                <div class="faq"><button class="faq-btn" data-faq="1">Como criar minha conta?<span class="faq-arrow">▼</span></button><div class="faq-body" id="faq-1">Clique no ícone de usuário no canto superior direito e selecione "Criar conta". Preencha nome, e-mail e senha, confirme pelo link enviado ao e-mail e pronto!</div></div>
+                <div class="faq"><button class="faq-btn" data-faq="2">Como ativar o modo noturno?<span class="faq-arrow">▼</span></button><div class="faq-body" id="faq-2">Clique no botão 🌙 no canto superior direito do cabeçalho, ou vá em Aparência e ative o toggle "Modo noturno". A preferência é salva automaticamente.</div></div>
+                <div class="faq"><button class="faq-btn" data-faq="3">Esqueci minha senha. O que faço?<span class="faq-arrow">▼</span></button><div class="faq-body" id="faq-3">Na página de login clique em "Esqueci minha senha". Informe seu e-mail e enviaremos um link de redefinição. Verifique também a caixa de spam.</div></div>
+                <div class="faq"><button class="faq-btn" data-faq="4">Como alterar minhas preferências?<span class="faq-arrow">▼</span></button><div class="faq-body" id="faq-4">Acesse esta página de Configurações pela barra lateral esquerda. Role a página para encontrar todas as seções disponíveis.</div></div>
+                <div class="faq"><button class="faq-btn" data-faq="5">O CajomaX é gratuito?<span class="faq-arrow">▼</span></button><div class="faq-body" id="faq-5">Sim! O acesso básico ao CajomaX é totalmente gratuito. Futuramente poderemos oferecer planos premium, mantendo sempre uma versão gratuita completa.</div></div>
+                <div class="faq"><button class="faq-btn" data-faq="6">Como contatar o suporte?<span class="faq-arrow">▼</span></button><div class="faq-body" id="faq-6">Acesse a página de <a href="suporte.html" style="color:#0C2B4E;">Suporte</a> pela barra lateral. Nossa equipe responde em até 24 horas úteis.</div></div>
+            </div>
+
+            <hr class="cfg-divider">
+
+            <!-- PRIVACIDADE -->
+            <div class="cfg-sec" id="sec-privacidade">
+                <h2>🔒 Privacidade</h2>
+                <p class="priv-date">Última atualização: Janeiro de 2026</p>
+                <div class="txt-blk"><h3>1. Dados que coletamos</h3><p>Coletamos apenas as informações necessárias ao funcionamento da plataforma: nome, e-mail e preferências de uso. Nenhum dado é coletado sem o seu consentimento.</p></div>
+                <div class="txt-blk"><h3>2. Como usamos seus dados</h3><p>Seus dados são usados exclusivamente para personalizar sua experiência, enviar comunicações relevantes (somente se você optar) e melhorar nossos serviços continuamente.</p></div>
+                <div class="txt-blk"><h3>3. Compartilhamento de informações</h3><p>O CajomaX não vende nem compartilha seus dados com terceiros para fins comerciais. Compartilhamos informações apenas quando exigido por lei ou para proteger a segurança dos usuários.</p></div>
+                <div class="txt-blk"><h3>4. Cookies</h3><p>Utilizamos cookies para melhorar a navegação e salvar preferências como o modo noturno. Você pode desativar cookies nas configurações do navegador a qualquer momento.</p></div>
+                <div class="txt-blk"><h3>5. Segurança</h3><p>Adotamos medidas técnicas e organizacionais para proteger seus dados contra acesso não autorizado, perda ou alteração.</p></div>
+                <div class="txt-blk"><h3>6. Seus direitos</h3><p>Você pode solicitar: acesso aos seus dados, correção de informações, exclusão da conta e portabilidade dos dados. Entre em contato pelo suporte para exercer esses direitos.</p></div>
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            © 2026 CajomaX — Todos os direitos reservados
+        </footer>
+    </main>
+
+    <div id="toast"></div>
+
+    <!--Link js-->
+    <script src="../js/script.js"></script>
+    <script>
+        // ── Tamanho de fonte ───────────────────────────────────
+        const fontSizes = { small: '13px', medium: '15px', large: '18px' };
+
+        function applyFontSize(val) {
+            document.documentElement.style.fontSize = fontSizes[val] || '15px';
+            localStorage.setItem('fontSize', val);
+            const sel = document.getElementById('selFonte');
+            if (sel) sel.value = val;
+        }
+
+        applyFontSize(localStorage.getItem('fontSize') || 'medium');
+
+        function updateIconeAparencia() {
+            const icone = document.getElementById('icone-aparencia');
+            if (!icone) return;
+            icone.src = isDark()
+                ? '../assets/icons/aparencia_marcoscolor.png'
+                : '../assets/icons/aparencia_gabrielcolor.png';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            updateIconeAparencia();
+            applyFontSize(localStorage.getItem('fontSize') || 'medium');
+
+            // Select de tamanho de fonte
+            const selFonte = document.getElementById('selFonte');
+            if (selFonte) selFonte.addEventListener('change', function () {
+                applyFontSize(this.value);
+                toast('Tamanho de fonte atualizado ✓');
+            });
+
+            // Botão dark mode com toast
+            const btnDark = document.getElementById('btnDark');
+            if (btnDark) btnDark.addEventListener('click', () => {
+                applyDark(!isDark());
+                toast('Modo noturno ' + (isDark() ? 'ativado ✓' : 'desativado'));
+            });
+
+            // Toggle dark mode com toast
+            const togDark = document.getElementById('togDark');
+            if (togDark) togDark.addEventListener('change', function () {
+                applyDark(this.checked);
+                updateIconeAparencia();
+                toast('Modo noturno ' + (this.checked ? 'ativado ✓' : 'desativado'));
+            });
+
+            // Accordion FAQ
+            document.querySelectorAll('.faq-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.dataset.faq;
+                    const body = document.getElementById('faq-' + id);
+                    const aberto = body.classList.contains('open');
+                    document.querySelectorAll('.faq-body').forEach(b => b.classList.remove('open'));
+                    document.querySelectorAll('.faq-btn').forEach(b => b.classList.remove('open'));
+                    if (!aberto) { body.classList.add('open'); btn.classList.add('open'); }
+                });
+            });
+
+            // Scroll para âncora via hash
+            if (location.hash) {
+                const alvo = document.getElementById('sec-' + location.hash.slice(1));
+                if (alvo) setTimeout(() => alvo.scrollIntoView({ behavior: 'smooth' }), 100);
+            }
+        });
+
+        function toast(msg) {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 2500);
+        }
+    </script>
+</body>
+
+</html>
